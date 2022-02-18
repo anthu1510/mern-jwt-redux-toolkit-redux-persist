@@ -20,33 +20,39 @@ const Layout = () => {
                 <div className="container-fluid">
                     {
                         auth.isLoggedIn
-                            ?
-                                <ul className="navbar-nav">
-                                    <li className="nav-item">
-                                        <Link className="nav-link active" to="/dashboard">Home</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/profile">Profile</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/change-password">Change Password</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" href="#" onClick={handleLogout}>Logout</a>
-                                    </li>
-                                </ul>
-                            :
-                                <ul className="navbar-nav ms-auto">
-                                    <li className="nav-item">
-                                        <Link className="nav-link active" to="/register">Register</Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/">Login</Link>
-                                    </li>
-                                </ul>
+                        ?
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                       data-bs-toggle="dropdown" aria-expanded="false">
+                                        Aravinth
+                                    </a>
+                                    <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li>
+                                            <Link className="nav-link" to="/profile">Profile</Link>
+                                        </li>
+                                        <li>
+                                            <Link className="nav-link" to="/change-password">Change Password</Link>
+                                        </li>
+                                        <li>
+                                            <hr className="dropdown-divider" />
+                                        </li>
+                                        <li>
+                                            <a className="nav-link" href="#" onClick={handleLogout}>Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        :
+                            <ul className="navbar-nav ms-auto">
+                                <li className="nav-item">
+                                    <Link className="nav-link active" to="/register">Register</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/">Login</Link>
+                                </li>
+                            </ul>
                     }
-
-
                 </div>
             </nav>
             <div className="container">

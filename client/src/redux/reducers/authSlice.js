@@ -14,6 +14,11 @@ export const userLogin = createAsyncThunk('login', async (user) => {
     return result.data.data;
 });
 
+export const getUserById = createAsyncThunk('login', async (user) => {
+    const result = await Axios.post('/auth/login', user);
+    return result.data.data;
+});
+
 export const authSlice = createSlice({
     name: 'auth',
     initialState: initailState,
